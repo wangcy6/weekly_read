@@ -205,6 +205,10 @@ https://blog.csdn.net/clearloveq/article/details/81708655
 
 
 
+- go test 单元测试直接显示 
+
+![image-20200912231931896](../images/image-20200912231931896.png)
+
 - vscode deubg 单元测试 本机 vscode golang launch.json 
 
 https://stackoverflow.com/questions/43092364/debugging-go-tests-in-visual-studio-code/43233176
