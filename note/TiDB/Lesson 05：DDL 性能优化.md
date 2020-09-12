@@ -233,12 +233,107 @@ ERROR 1280 (42000): Incorrect index name
 ErrWrongNameForIndex
 ~~~
 
+- create index `` on t10 (x);
+
+~~~
+create index `` on t10 (x);
+    
+    
+ [2020/09/12 17:53:35.938 +08:00] [INFO] [conn.go:869] [dispatch] [conn=5] [data:="create index `` on t10 (x)"]
+[2020/09/12 17:53:35.946 +08:00] [INFO] [session.go:2257] ["CRUCIAL OPERATION"] [conn=5] [schemaVersion=264] [cur_db=test] [sql="create index `` on t10 (x)"] [user=root@127.0.0.1]
+[2020/09/12 17:53:35.959 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419405343212175363] [commitTS=419405343212175364]
+    
+    
+[2020/09/12 17:53:35.964 +08:00] [INFO] [ddl_worker.go:260] ["[ddl] add DDL jobs"] ["batch count"=1] [jobs="ID:195, Type:add index, State:none, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0; "]
+[2020/09/12 17:53:35.964 +08:00] [INFO] [ddl.go:475] ["[ddl] start DDL job"] [job="ID:195, Type:add index, State:none, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"] [query="create index `` on t10 (x)"]
+    
+    
+[2020/09/12 17:53:35.969 +08:00] [INFO] [ddl_worker.go:589] ["[ddl] run DDL job"] [worker="worker 2, tp add index"] [job="ID:195, Type:add index, State:none, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+    
+    
+[2020/09/12 17:53:35.971 +08:00] [INFO] [index.go:494] ["[ddl] run add index job"] [job="ID:195, Type:add index, State:running, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"] [indexInfo="{\"id\":2,\"idx_name\":{\"O\":\"x_2\",\"L\":\"x_2\"},\"tbl_name\":{\"O\":\"\",\"L\":\"\"},\"idx_cols\":[{\"name\":{\"O\":\"x\",\"L\":\"x\"},\"offset\":0,\"length\":-1}],\"state\":0,\"comment\":\"\",\"index_type\":1,\"is_unique\":false,\"is_primary\":false,\"is_invisible\":false,\"is_global\":false}"]
+[2020/09/12 17:53:35.984 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419405343212175366] [commitTS=419405343212175367]
+    
+    
+    
+[2020/09/12 17:53:36.010 +08:00] [INFO] [domain.go:127] ["diff load InfoSchema success"] [usedSchemaVersion=264] [neededSchemaVersion=265] ["start time"=2.407249ms] [phyTblIDs="[193]"] [actionTypes="[128]"]
+[2020/09/12 17:53:36.060 +08:00] [INFO] [ddl_worker.go:783] ["[ddl] wait latest schema version changed"] [worker="worker 2, tp add index"] [ver=265] ["take time"=59.300957ms] [job="ID:195, Type:add index, State:running, SchemaState:delete only, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+[2020/09/12 17:53:36.064 +08:00] [INFO] [ddl_worker.go:589] ["[ddl] run DDL job"] [worker="worker 2, tp add index"] [job="ID:195, Type:add index, State:running, SchemaState:delete only, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+[2020/09/12 17:53:36.088 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419405343238127617] [commitTS=419405343238127618]
+[2020/09/12 17:53:36.100 +08:00] [INFO] [domain.go:127] ["diff load InfoSchema success"] [usedSchemaVersion=265] [neededSchemaVersion=266] ["start time"=2.371491ms] [phyTblIDs="[193]"] [actionTypes="[128]"]
+[2020/09/12 17:53:36.147 +08:00] [INFO] [ddl_worker.go:783] ["[ddl] wait latest schema version changed"] [worker="worker 2, tp add index"] [ver=266] ["take time"=52.974685ms] [job="ID:195, Type:add index, State:running, SchemaState:write only, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+[2020/09/12 17:53:36.150 +08:00] [INFO] [ddl_worker.go:589] ["[ddl] run DDL job"] [worker="worker 2, tp add index"] [job="ID:195, Type:add index, State:running, SchemaState:write only, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+[2020/09/12 17:53:36.160 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419405343264342017] [commitTS=419405343264342018]
+[2020/09/12 17:53:36.172 +08:00] [INFO] [domain.go:127] ["diff load InfoSchema success"] [usedSchemaVersion=266] [neededSchemaVersion=267] ["start time"=2.382859ms] [phyTblIDs="[193]"] [actionTypes="[128]"]
+    
+[2020/09/12 17:53:36.220 +08:00] [INFO] [ddl_worker.go:783] ["[ddl] wait latest schema version changed"] [worker="worker 2, tp add index"] [ver=267] ["take time"=52.961952ms] [job="ID:195, Type:add index, State:running, SchemaState:write reorganization, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+[2020/09/12 17:53:36.223 +08:00] [INFO] [ddl_worker.go:589] ["[ddl] run DDL job"] [worker="worker 2, tp add index"] [job="ID:195, Type:add index, State:running, SchemaState:write reorganization, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+[2020/09/12 17:53:36.237 +08:00] [INFO] [reorg.go:420] ["[ddl] get table range, endHandle < startHandle"] [table="&{193 t10 utf8mb4 utf8mb4_bin [int(11)] [0xc00178c7e0 0xc00178c870] [] [] public false false  0 0 0 1 2 0 419405343264342017 0 0 0 0 0 <nil>  <nil> <nil> <nil> 3 <nil>}"] ["table/partition ID"=193] [endHandle=<nil>] [startHandle=<nil>]
+    
+[2020/09/12 17:53:36.238 +08:00] [INFO] [reorg.go:465] ["[ddl] job get table range"] [jobID=195] [physicalTableID=193] [startHandle=<nil>] [endHandle=<nil>]
+[2020/09/12 17:53:36.249 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419405343277449217] [commitTS=419405343290556417]
+[2020/09/12 17:53:36.255 +08:00] [INFO] [ddl_worker.go:755] ["[ddl] schema version doesn't change"] [worker="worker 2, tp add index"]
+[2020/09/12 17:53:36.257 +08:00] [INFO] [ddl_worker.go:589] ["[ddl] run DDL job"] [worker="worker 2, tp add index"] [job="ID:195, Type:add index, State:running, SchemaState:write reorganization, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:419405343277449218"]
+    
+[2020/09/12 17:53:36.261 +08:00] [INFO] [index.go:1411] ["[ddl] start to add table index"] [job="ID:195, Type:add index, State:running, SchemaState:write reorganization, SchemaID:1, TableID:193, RowCount:0, ArgLen:5, start time: 2020-09-12 17:53:35.94 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:419405343277449218"] [reorgInfo=StartHandle:<nil>,EndHandle:<nil>,first:false,PhysicalTableID:193]
+[2020/09/12 17:53:36.262 +08:00] [INFO] [reorg.go:158] ["[ddl] run reorg job done"] ["handled rows"=0]
+[2020/09/12 17:53:36.293 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419405343290556418] [commitTS=419405343303663617]
+~~~
 
 
-- ALTER table t12 ADD key ``(a);
 
-mysql> ALTER table t12 ADD key ``(a);
-Query OK, 0 rows affected (0.47 sec)
+-  CREATE TABLE t10(x INT, KEY ``(x));
+
+~~~verilog
+drop table t10;
+CREATE TABLE t10(x INT, KEY ``(x));
+    
+[2020/09/12 17:11:07.782 +08:00] [INFO] [conn.go:869] [dispatch] [conn=5] [data:="CREATE TABLE t10(x INT, KEY ``(x))"]
+[2020/09/12 17:11:07.782 +08:00] [INFO] [session.go:2257] ["CRUCIAL OPERATION"] [conn=5] [schemaVersion=263] [cur_db=test] [sql="CREATE TABLE t10(x INT, KEY ``(x))"] [user=root@127.0.0.1]
+[2020/09/12 17:11:07.791 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419404675216572421] [commitTS=419404675229679617]
+[2020/09/12 17:11:07.805 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419404675229679618] [commitTS=419404675229679619]
+
+func (d *ddl) doDDLJob(ctx sessionctx.Context, job *model.Job) error {
+[2020/09/12 17:11:07.809 +08:00] [INFO] [ddl_worker.go:260] ["[ddl] add DDL jobs"] ["batch count"=1] [jobs="ID:194, Type:create table, State:none, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:1, start time: 2020-09-12 17:11:07.789 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0; "]
+
+ //函数中检测到 history DDL job 队列中有对应的 job 后，返回
+// 检查DDL执行情况。
+[2020/09/12 17:11:07.809 +08:00] [INFO] [ddl.go:475] ["[ddl] start DDL job"] [job="ID:194, Type:create table, State:none, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:1, start time: 2020-09-12 17:11:07.789 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"] [query="CREATE TABLE t10(x INT, KEY ``(x))"]
+    
+// runDDLJob runs a DDL job. It returns the current schema version in this transaction and the error.
+/**
+runDDLJob 函数里面会根据 job 的类型，然后调用对应的执行函数，对于 create table 类型的 job，会调用 onCreateTable 函数，
+然后做一些 check 后，会调用 t.CreateTable 函数，将 db_ID 和 table_ID 映射为 key，tableInfo 作为 value 存到 TiKV 里面去，并更新 job 的状态。
+*/
+func (w *worker) runDDLJob(d *ddlCtx, t *meta.Meta, job *model.Job) (ver int64, err error) 
+    
+[2020/09/12 17:11:07.813 +08:00] [INFO] [ddl_worker.go:589] ["[ddl] run DDL job"] [worker="worker 1, tp general"] [job="ID:194, Type:create table, State:none, SchemaState:none, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:11:07.789 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+    
+    
+    
+[2020/09/12 17:11:07.833 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419404675229679621] [commitTS=419404675229679626]
+[2020/09/12 17:11:07.844 +08:00] [INFO] [domain.go:127] ["diff load InfoSchema success"] [usedSchemaVersion=263] [neededSchemaVersion=264] ["start time"=2.095541ms] [phyTblIDs="[193]"] [actionTypes="[8]"]
+    
+[2020/09/12 17:11:07.893 +08:00] [INFO] [ddl_worker.go:783] ["[ddl] wait latest schema version changed"] [worker="worker 1, tp general"] [ver=264] ["take time"=53.108615ms] [job="ID:194, Type:create table, State:done, SchemaState:public, SchemaID:1, TableID:193, RowCount:0, ArgLen:1, start time: 2020-09-12 17:11:07.789 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+ 
+// finishDDLJob deletes the finished DDL job in the ddl queue and puts it to history queue.
+// If the DDL job need to handle in background, it will prepare a background job.
+finishDDLJob    
+[2020/09/12 17:11:07.897 +08:00] [INFO] [ddl_worker.go:366] ["[ddl] finish DDL job"] [worker="worker 1, tp general"] [job="ID:194, Type:create table, State:synced, SchemaState:public, SchemaID:1, TableID:193, RowCount:0, ArgLen:0, start time: 2020-09-12 17:11:07.789 +0800 CST, Err:<nil>, ErrCount:0, SnapshotVersion:0"]
+    
+    
+[2020/09/12 17:11:07.903 +08:00] [WARN] [2pc.go:1006] ["schemaLeaseChecker is not set for this transaction, schema check skipped"] [connID=0] [startTS=419404675255894017] [commitTS=419404675255894018]
+    
+    
+[2020/09/12 17:11:07.911 +08:00] [INFO] [ddl.go:507] ["[ddl] DDL job is finished"] [jobID=194]
+]
+
+    
+ 
+
+~~~
+
+
 
 ## 动手
 

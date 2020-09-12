@@ -94,6 +94,17 @@ tiup cluster display tidb-test
 
 
 
+4. gdb调试 [失败]
+
+```
+directory /data/tidb/src/github.com/pingcap/tidb
+
+b ddl_api.go/ddl_api.go:1559
+b CreateTable
+```
+
+http://lday.me/2017/02/27/0005_gdb-vs-dlv/
+
 ### Centos
 
 
@@ -193,6 +204,14 @@ https://blog.csdn.net/clearloveq/article/details/81708655
 > 放弃了。
 
 
+
+- vscode deubg 单元测试 本机 vscode golang launch.json 
+
+https://stackoverflow.com/questions/43092364/debugging-go-tests-in-visual-studio-code/43233176
+
+https://medium.com/@kaperys/delve-into-docker-d6c92be2f823
+
+https://www.klefz.se/debugging-golang-tests-with-visual-studio-code-and-delve
 
 
 
