@@ -211,13 +211,27 @@ https://blog.csdn.net/clearloveq/article/details/81708655
 
 - vscode deubg 单元测试 本机 vscode golang launch.json 
 
-https://stackoverflow.com/questions/43092364/debugging-go-tests-in-visual-studio-code/43233176
-
-https://medium.com/@kaperys/delve-into-docker-d6c92be2f823
-
-https://www.klefz.se/debugging-golang-tests-with-visual-studio-code-and-delve
 
 
+https://github.com/golang/vscode-go/blob/master/docs/debugging.md
+
+
+
+- [x] vsocde 启动 tidb
+
+```golang
+修改默认配置：D:\money\src\github.com\pingcap\tidb\config\config.go
+var defaultConf = Config{
+	Path:                         "F:/tidb",
+	
+tidb-server/main.go
+```
+
+
+
+- [x]  安装mysql客户端Navicat，连接window下 tb server 
+
+![image-20200916121053504](../images/image-20200916121053504.png)
 
 
 
