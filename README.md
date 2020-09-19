@@ -1,7 +1,7 @@
-# to_do
-
-
-### 
-
-
-第1次阅读，深入理解计算机系统 阅读到37页
+# gitbook使用说明
+## window启动配置
+~~~shell
+cd D:\money\weekly_read
+gitbook serve
+git clone https://github.com/DreamAndDead/CSAPP-3e-Solutions.git
+~~~
