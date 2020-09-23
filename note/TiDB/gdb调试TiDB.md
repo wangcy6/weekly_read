@@ -214,7 +214,23 @@ go test -check.f TestCastXXX //使用 go test -check.f $TEST_NAME 来指定测�
 
    
 
+ {
 
+   "name": "Tidb planner Launch test package",
+
+   "type": "go",
+
+   "request": "launch",
+
+   "mode": "test",
+
+   "program": "${workspaceFolder}\\planner\\core",
+
+   "env": {},
+
+   "args": ["-check.f", "TestValidator"]
+
+  }
 
 Windows Management Framework 4.
 
