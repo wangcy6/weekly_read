@@ -286,7 +286,7 @@ Tidb： 部分截图
   minio  workloada  workloadb  workloadc  workloadd  workloade  workloadf  workload_template
 ~~~
 
-  ![image-20200820201448205](../images/image-20200820201448205.png)
+  ![image-20200820201448205](../../../../code/github/leetcode/study/images/image-20200820201448205.png)
 
 2. ops是啥
 

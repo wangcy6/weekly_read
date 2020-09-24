@@ -278,6 +278,56 @@ tidb-server/main.go
 
 
 
+
+
+# 三、 提交代码
+
+
+
+- 生成新 SSH 密钥
+
+```shell
+ssh-keygen -t rsa -b 4096 -C "wang_cyi@163.com"
+cat /root/.ssh/id_rsa.pub 
+```
+
+- 在github上添加刚刚生成的公钥
+
+- ### 提交pr准备-本地代码管理
+
+~~~cmake
+
+##  切换分支 不加-b则是切换到某一分支上，加上-b就是创建且切换
+git checkout -b dev_study 
+git branch
+git checkout  dev_study 
+## 提交代码到指定的分支
+git push origin dev_study
+
+git push
+fatal: The current branch dev_study has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev_study
+    
+~~~
+
+
+
+- 提交pr准备-新分支提交到远程仓库中
+
+~~~
+
+~~~
+
+
+
+
+
+
+
+
+
 ## FQA
 
 - https://pingcap.com/blog-cn/30mins-become-contributor-of-tikv/ 三十分钟成为 Contributor | 为 TiKV 添加 built-in 函数
