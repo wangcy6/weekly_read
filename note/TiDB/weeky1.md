@@ -163,6 +163,11 @@ cd /data/tidb/bin/
 nohup ./tidb-server --store=tikv \
                   --path="127.0.0.1:2379" \
                   --log-file=tidb.log 2>&1 &
+                  
+cp /data/tidb/src/github.com/watchpoints/tidb/bin/tidb-server /data/tidb/tiup/tidb-deploy/tidb-4000/bin/tidb-server
+cd /data/tidb/tiup
+tiup cluster start tidb-test  -R pd ## 单独启动
+tiup cluster stop tidb-test
 ```
 
 - 步骤四，测试

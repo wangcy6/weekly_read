@@ -132,6 +132,21 @@ b CreateTable
 
 http://lday.me/2017/02/27/0005_gdb-vs-dlv/
 
+
+
+5.  dlv
+
+- dlv attach 15716
+- 设置断点
+
+函数入口：
+
+b tidb/server/conn.go:1378
+
+
+
+
+
 ### Centos
 
 
@@ -268,6 +283,8 @@ var defaultConf = Config{
 	Path:                         "F:/tidb",
 	
 tidb-server/main.go
+["new store"] [path=unistore:///tmp/tidb]
+
 ```
 
 
