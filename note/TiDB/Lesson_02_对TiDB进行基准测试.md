@@ -256,9 +256,11 @@ Tidb： 部分截图
   ~~~shell
   cd /data/tidb/src/github.com/pingcap/go-ycsb
   
-  ./bin/go-ycsb load mysql -P ./workloads/workloada -p recordcount=10000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3
+  ./bin/go-ycsb load mysql -P ./workloads/workloada -p recordcount=100000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3
   
-  ./bin/go-ycsb run mysql -P ./workloads/workloada -p recordcount=10000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3 
+  ./bin/go-ycsb run mysql -P ./workloads/workloada -p recordcount=100000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3 
+  
+  https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
   ~~~
 
   
@@ -291,6 +293,10 @@ Tidb： 部分截图
 2. ops是啥
 
 > ops/sec 每秒操作数
+
+https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
+
+
 
 
 
