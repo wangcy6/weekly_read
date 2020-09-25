@@ -261,6 +261,13 @@ Tidb： 部分截图
   ./bin/go-ycsb run mysql -P ./workloads/workloada -p recordcount=100000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3 
   
   https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
+  
+  http://www.mytidb.com:2379/dashboard/
+  
+  https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge-cn.md
+  https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
+  Workloade
+  http://stormluke.me/ycsb-hbase-readme/
   ~~~
 
   
