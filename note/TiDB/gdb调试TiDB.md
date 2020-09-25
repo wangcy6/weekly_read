@@ -136,12 +136,26 @@ http://lday.me/2017/02/27/0005_gdb-vs-dlv/
 
 5.  dlv
 
-- dlv attach 15716
+- cd /data/tidb/tiup/tidb-deploy/tidb-4000/bin
+
+- dlv attach 16419
 - 设置断点
 
 函数入口：
 
 b tidb/server/conn.go:1378
+
+b tidb/session/session.go:1080
+
+王传义:
+tiup启动时候发现里面不停执行 其他sql命令 ，window 启动时候也是，很难进入自己执行命令，看来单元测试最靠谱。
+
+纸君:
+所以要在 用户键入命令开始下断点、
+
+
+
+
 
 
 
