@@ -1,6 +1,22 @@
 https://github.com/Talk-Go-CSAPP-05/Discusion
 
+https://talkgo.org/t/topic/
+
 ![image.png](https://i.loli.net/2020/09/21/yzXcpZ4VYNOrjg8.png)
+
+## 第二周打卡：
+
+
+
+汇编指令回顾，下面都是具体例子，先了解，在验证（目前没有验证）
+
+1. call c++ 普通函数调用 call 地址，虚函数 call ptr[i] 是个偏移量。可见代码编译时候不确定对应地址
+2. lock volatile 解决缓存内存可可见性， 不解决
+3. gcc golang 设置cflag开启内联，print 遍历查看 x 十六进制内容。 写demo打印函数堆栈调用和整数数值。
+4. 二进制操作一定看懂 &  ^操作。
+
+
+
 
 ## 第一周打卡：
 
@@ -22,3 +38,9 @@ c：原子操作 。
 d：减少线程数量。
 
 因此可见，一个程序运行，这里抽象为进程这个概念。这个概念隐含很多东西，不仅是独占那么简单。需要更加复杂机制。
+
+所在小组
+   第五组
+组内昵称
+     王传义
+你的心得体会

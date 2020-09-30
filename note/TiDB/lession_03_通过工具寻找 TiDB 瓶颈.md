@@ -696,6 +696,9 @@ go tool pprof http://{TiDBIP}:10080/debug/pprof/profile?seconds=30s
 curl http://0.0.0.0:10080/debug/pprof/goroutine?debug=2 --output stack.txt
 
 Go语言的性能分析工具pprof是Google C++ profiler的移植
+
+
+https://github.com/pingcap/tidb/blob/master/docs/design/2019-11-14-tidb-builtin-diagnostics.md
 ~~~
 
 
