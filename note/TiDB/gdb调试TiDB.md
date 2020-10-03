@@ -132,6 +132,35 @@ b CreateTable
 
 http://lday.me/2017/02/27/0005_gdb-vs-dlv/
 
+
+
+5.  dlv
+
+- cd /data/tidb/tiup/tidb-deploy/tidb-4000/bin
+
+- dlv attach 16419
+- 设置断点
+
+函数入口：
+
+b tidb/server/conn.go:1378
+
+b tidb/session/session.go:1080
+
+王传义:
+tiup启动时候发现里面不停执行 其他sql命令 ，window 启动时候也是，很难进入自己执行命令，看来单元测试最靠谱。
+
+纸君:
+所以要在 用户键入命令开始下断点、
+
+
+
+
+
+
+
+
+
 ### Centos
 
 
@@ -214,7 +243,23 @@ go test -check.f TestCastXXX //使用 go test -check.f $TEST_NAME 来指定测�
 
    
 
+ {
 
+   "name": "Tidb planner Launch test package",
+
+   "type": "go",
+
+   "request": "launch",
+
+   "mode": "test",
+
+   "program": "${workspaceFolder}\\planner\\core",
+
+   "env": {},
+
+   "args": ["-check.f", "TestValidator"]
+
+  }
 
 Windows Management Framework 4.
 
@@ -252,6 +297,8 @@ var defaultConf = Config{
 	Path:                         "F:/tidb",
 	
 tidb-server/main.go
+["new store"] [path=unistore:///tmp/tidb]
+
 ```
 
 
@@ -259,6 +306,56 @@ tidb-server/main.go
 - [x]  安装mysql客户端Navicat，连接window下 tb server 
 
 ![image-20200916121053504](../images/image-20200916121053504.png)
+
+
+
+
+
+# 三、 提交代码
+
+
+
+- 生成新 SSH 密钥
+
+```shell
+ssh-keygen -t rsa -b 4096 -C "wang_cyi@163.com"
+cat /root/.ssh/id_rsa.pub 
+```
+
+- 在github上添加刚刚生成的公钥
+
+- ### 提交pr准备-本地代码管理
+
+~~~cmake
+
+##  切换分支 不加-b则是切换到某一分支上，加上-b就是创建且切换
+git checkout -b dev_study 
+git branch
+git checkout  dev_study 
+## 提交代码到指定的分支
+git push origin dev_study
+
+git push
+fatal: The current branch dev_study has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev_study
+    
+~~~
+
+
+
+- 提交pr准备-新分支提交到远程仓库中
+
+~~~
+
+~~~
+
+
+
+
+
+
 
 
 

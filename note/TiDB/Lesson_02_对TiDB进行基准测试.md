@@ -256,9 +256,18 @@ Tidb： 部分截图
   ~~~shell
   cd /data/tidb/src/github.com/pingcap/go-ycsb
   
-  ./bin/go-ycsb load mysql -P ./workloads/workloada -p recordcount=10000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3
+  ./bin/go-ycsb load mysql -P ./workloads/workloada -p recordcount=100000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3
   
-  ./bin/go-ycsb run mysql -P ./workloads/workloada -p recordcount=10000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3 
+  ./bin/go-ycsb run mysql -P ./workloads/workloada -p recordcount=100000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root -p mysql.password=123456 -p mysql.db=test --threads 3 
+  
+  https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
+  
+  http://www.mytidb.com:2379/dashboard/
+  
+  https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge-cn.md
+  https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
+  Workloade
+  http://stormluke.me/ycsb-hbase-readme/
   ~~~
 
   
@@ -286,11 +295,15 @@ Tidb： 部分截图
   minio  workloada  workloadb  workloadc  workloadd  workloade  workloadf  workload_template
 ~~~
 
-  ![image-20200820201448205](../images/image-20200820201448205.png)
+  ![image-20200820201448205](../../../../code/github/leetcode/study/images/image-20200820201448205.png)
 
 2. ops是啥
 
 > ops/sec 每秒操作数
+
+https://github.com/pingcap/go-ycsb/blob/master/workloads/workloade
+
+
 
 
 
