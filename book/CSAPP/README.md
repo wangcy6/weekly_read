@@ -4,10 +4,36 @@ https://talkgo.org/t/topic/
 
 https://github.com/mofaph/csapp
 
-
+https://pccito.ugr.es/ec/practicas/2a/
 
 ![image.png](https://i.loli.net/2020/09/21/yzXcpZ4VYNOrjg8.png)
->>>>>>> 8c6ccf2aad3a8e0ab13b8e9d29b2dcae54924caa
+
+
+
+### 第三周
+
+### 总结
+
+
+
+### 记录
+
+- ```shell
+  gcc -Og -o prog main.c mstore.c
+  objdump -d prog 
+  objdump -d mstore.o
+  如果既想显示源代码，又想显示汇编代码，可以使用“layout split”命令
+  p $rbp
+  ```
+
+### 阅读资料
+
+- https://xz.aliyun.com/t/2554
+- https://www.youtube.com/playlist?list=PLmBgoRqEQCWy58EIwLSWwMPfkwLOLRM5R
+- https://www.bilibili.com/video/BV1a54y1k7YE?from=search&seid=11557456987003497790
+
+- https://imhuwq.com/2019/01/31/%E4%BB%8E%E6%B1%87%E7%BC%96%E7%9A%84%E8%A7%92%E5%BA%A6%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%81/ 【10%】
+- https://bbs.pediy.com/thread-257246.htm 【10%】
 
 ## 第二周打卡：
 
@@ -49,3 +75,13 @@ d：减少线程数量。
 组内昵称
      王传义
 你的心得体会
+
+
+
+# 03_Java高并发编程详解-多线程与架构设计
+
+
+
+## 线程安全场景
+
+- 读写锁
