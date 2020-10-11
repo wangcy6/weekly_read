@@ -1,3 +1,9 @@
+
+
+![image.png](https://i.loli.net/2020/09/21/yzXcpZ4VYNOrjg8.png)
+
+https://github.com/wangcy6/weekly_read/tree/master/book/CSAPP
+
 https://github.com/Talk-Go-CSAPP-05/Discusion
 
 https://talkgo.org/t/topic/
@@ -6,34 +12,113 @@ https://github.com/mofaph/csapp
 
 https://pccito.ugr.es/ec/practicas/2a/
 
-![image.png](https://i.loli.net/2020/09/21/yzXcpZ4VYNOrjg8.png)
 
 
-
-### 第三周
+## 第三周打卡
 
 ### 总结
 
 
 
+> 实验1：通过GDB调试一个简单函数调用c代码，看懂一个函数汇代码和16个寄存器如何被执行的。
+
+- 如果既想显示源代码，又想显示汇编代码，可以使用“layout split”命令
+- 16个寄存器
+
+| 64 位  | 32 位   | 16 位   | 8 位    | 职责         |
+| :----- | :------ | :------ | :------ | :----------- |
+| `%rax` | `%eax`  | `%ax`   | `%al`   | 返回值       |
+| `%rbx` | `%ebx`  | `%bx`   | `%bl`   | 被调用者保存 |
+| `%rcx` | `%ecx`  | `%cx`   | `%cl`   | 第四个参数   |
+| `%rdx` | `%edx`  | `%dx`   | `%dl`   | 第三个参数   |
+| `%rsi` | `%esi`  | `%si`   | `%sil`  | 第二个参数   |
+| `%rdi` | `%edi`  | `%di`   | `%dil`  | 第一个参数   |
+| `%rbp` | `%ebp`  | `%bp`   | `%bpl`  | 帧指针       |
+| `%rsp` | `%esp`  | `%sp`   | `%spl`  | 栈指针       |
+| `%r8`  | `%r8d`  | `%r8w`  | `%r8b`  | 第五个参数   |
+| `%r9`  | `%r9d`  | `%r9w`  | `%r9b`  | 第六个参数   |
+| `%r10` | `%r10d` | `%r10w` | `%r10b` | 调用者保存   |
+| `%r11` | `%r11d` | `%r11w` | `%r11b` | 调用者保存   |
+| `%r12` | `%r12d` | `%r12w` | `%r12b` | 被调用者保存 |
+| `%r13` | `%r13d` | `%r13w` | `%b13b` | 被调用者保存 |
+| `%r14` | `%r14d` | `%r14w` | `%r14b` | 被调用者保存 |
+| `%r15` | `%r15d` | `%r15w` | `%r15b` | 被调用者保存 |
+
+- 函数A调用函数B过程我现在没看懂[疑问]
+
+- 继续补充：https://github.com/Talk-Go-CSAPP-05/Discusion/issues/14
+
+  
+
 ### 记录
 
 - ```shell
-  gcc -Og -o prog main.c mstore.c
-  objdump -d prog 
-  objdump -d mstore.o
+  gcc  -Og  -c mstore.c objdump -d mstore.o
+  
+  gcc  -Og  -S mstore.c cat mstore.s
+  
+  gcc -g -o prog main.c mstore.c  objdump -d prog 
+  
+  
   如果既想显示源代码，又想显示汇编代码，可以使用“layout split”命令
   p $rbp
   ```
 
+
+
+代码：https://gitee.com/wang_cyi/study/tree/master/c++_study/2020
+
+![image-20201011174818792](images/image-20201011174818792.png)
+
+
+
+汇编：
+
+~~~shell
+0000000000400517 <multstore>:
+  400517:       53                      push   %rbx 
+  400518:       48 89 d3                mov    %rdx,%rbx
+  40051b:       e8 ef ff ff ff          callq  40050f <mult2>
+  400520:       48 89 03                mov    %rax,(%rbx)
+  400523:       5b                      pop    %rbx
+  400524:       c3                      retq   
+  400525:       66 2e 0f 1f 84 00 00    nopw   %cs:0x0(%rax,%rax,1)
+  40052c:       00 00 00 
+  40052f:       90                      nop 
+  
+  寄存器%rbx 
+  
+~~~
+
+![image-20201011180825936](images/image-20201011180825936.png)
+
+![image-20201011180845846](images/image-20201011180845846.png)
+
+![img](http://abcdxyzk.github.io/images/assembly/2013-06-04-2.png)
+
 ### 阅读资料
 
 - https://xz.aliyun.com/t/2554
+
 - https://www.youtube.com/playlist?list=PLmBgoRqEQCWy58EIwLSWwMPfkwLOLRM5R
+
 - https://www.bilibili.com/video/BV1a54y1k7YE?from=search&seid=11557456987003497790
 
-- https://imhuwq.com/2019/01/31/%E4%BB%8E%E6%B1%87%E7%BC%96%E7%9A%84%E8%A7%92%E5%BA%A6%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%81/ 【10%】
+  
+
 - https://bbs.pediy.com/thread-257246.htm 【10%】
+
+- http://abcdxyzk.github.io/blog/2012/11/23/assembly-args/ 
+
+  https://sourceware.org/gdb/onlinedocs/gdb/Registers.html
+
+  https://wizardforcel.gitbooks.io/100-gdb-tips/content/print-registers.html
+
+  https://my.oschina.net/zengfr/blog/3196521
+
+  https://imhuwq.com/2019/01/31/%E4%BB%8E%E6%B1%87%E7%BC%96%E7%9A%84%E8%A7%92%E5%BA%A6%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%81/ 【10%】
+
+  【10%】
 
 ## 第二周打卡：
 
@@ -70,18 +155,7 @@ d：减少线程数量。
 
 因此可见，一个程序运行，这里抽象为进程这个概念。这个概念隐含很多东西，不仅是独占那么简单。需要更加复杂机制。
 
-所在小组
-   第五组
-组内昵称
-     王传义
-你的心得体会
 
 
 
-# 03_Java高并发编程详解-多线程与架构设计
 
-
-
-## 线程安全场景
-
-- 读写锁
