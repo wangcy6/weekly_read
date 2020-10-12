@@ -16,9 +16,15 @@ https://pccito.ugr.es/ec/practicas/2a/
 
 ## 第三周打卡
 
-### 总结
+疑问：
+
+- 我怎么观察 函数调用 和寄存器 之间关系，看文字怎么想都想不明白，gdb打印吗？
 
 
+
+### 总结 
+
+https://talkgo.org/t/topic/1064/15
 
 > 实验1：通过GDB调试一个简单函数调用c代码，看懂一个函数汇代码和16个寄存器如何被执行的。
 
@@ -61,6 +67,9 @@ https://pccito.ugr.es/ec/practicas/2a/
   
   
   如果既想显示源代码，又想显示汇编代码，可以使用“layout split”命令
+  
+  layout split
+  layout regs
   p $rbp
   ```
 
@@ -95,6 +104,12 @@ https://pccito.ugr.es/ec/practicas/2a/
 ![image-20201011180845846](images/image-20201011180845846.png)
 
 ![img](http://abcdxyzk.github.io/images/assembly/2013-06-04-2.png)
+
+
+
+
+
+
 
 ### 阅读资料
 

@@ -217,7 +217,36 @@ mysqladmin -uroot -p password 123456
 
 
 
-# 案例
+# MYSQL案例
+
+
+
+## 19
+
+~~~
+drop table t;
+CREATE TABLE `t` (
+`id` int(11) NOT NULL,
+`c` int(11) DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+
+delimiter ;;
+create procedure idata()
+begin
+declare i int;
+set i=1;
+while(i<=100000)do
+insert into t values(i,i);
+set i=i+1;
+end while;
+end;;
+delimiter ;
+call idata();
+~~~
+
+
 
 ## 第一天
 
