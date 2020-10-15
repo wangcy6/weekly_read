@@ -662,22 +662,18 @@ http://95.169.24.121:10080/debug/pprof/
 
 
 #  TiDB 内存快照分析
+
 go tool pprof 127.0.0.1:10080/debug/pprof/heap
+
 curl -G 127.0.0.1:10080/debug/pprof/heap > heap.profile
 
 go tool pprof heap.profile
 
-
-登录 Dashboard 后，可在左侧功能导航处点击「高级调试 → 节点性能分析」进入性能分析页面。
-
-选择一个或多个需要进行性能分析的节点，并选择性能分析时长(默认为 30 秒，最多 120 秒)，点击「开始分析」，即可开始性能分析。
  
 # pstack命令可显示每个进程的栈跟踪
 sudo apt-get install pstack strace
 pstack  16281
 strace -p  16281
-
-
 
 curl http://127.0.0.1:10080/debug/zip --output tidb_debug.zip
 profile就是定时采样，收集cpu，内存等信息，进而给出性能优化指导
@@ -699,6 +695,7 @@ Go语言的性能分析工具pprof是Google C++ profiler的移植
 
 
 https://github.com/pingcap/tidb/blob/master/docs/design/2019-11-14-tidb-builtin-diagnostics.md
+
 ~~~
 
 
