@@ -31,30 +31,11 @@ https://talkgo.org/t/topic/1064/15
 - 如果既想显示源代码，又想显示汇编代码，可以使用“layout split”命令
 - 16个寄存器
 
-| 64 位  | 32 位   | 16 位   | 8 位    | 职责         |
-| :----- | :------ | :------ | :------ | :----------- |
-| `%rax` | `%eax`  | `%ax`   | `%al`   | 返回值       |
-| `%rbx` | `%ebx`  | `%bx`   | `%bl`   | 被调用者保存 |
-| `%rcx` | `%ecx`  | `%cx`   | `%cl`   | 第四个参数   |
-| `%rdx` | `%edx`  | `%dx`   | `%dl`   | 第三个参数   |
-| `%rsi` | `%esi`  | `%si`   | `%sil`  | 第二个参数   |
-| `%rdi` | `%edi`  | `%di`   | `%dil`  | 第一个参数   |
-| `%rbp` | `%ebp`  | `%bp`   | `%bpl`  | 帧指针       |
-| `%rsp` | `%esp`  | `%sp`   | `%spl`  | 栈指针       |
-| `%r8`  | `%r8d`  | `%r8w`  | `%r8b`  | 第五个参数   |
-| `%r9`  | `%r9d`  | `%r9w`  | `%r9b`  | 第六个参数   |
-| `%r10` | `%r10d` | `%r10w` | `%r10b` | 调用者保存   |
-| `%r11` | `%r11d` | `%r11w` | `%r11b` | 调用者保存   |
-| `%r12` | `%r12d` | `%r12w` | `%r12b` | 被调用者保存 |
-| `%r13` | `%r13d` | `%r13w` | `%b13b` | 被调用者保存 |
-| `%r14` | `%r14d` | `%r14w` | `%r14b` | 被调用者保存 |
-| `%r15` | `%r15d` | `%r15w` | `%r15b` | 被调用者保存 |
+- 函数A调用函数B过程我现在没看懂[3.7章节]
 
-- 函数A调用函数B过程我现在没看懂[疑问]
+- FQA：https://github.com/Talk-Go-CSAPP-05/Discusion/issues/14
 
-- 继续补充：https://github.com/Talk-Go-CSAPP-05/Discusion/issues/14
-
-  
+  现在看代码还是看源码，加入gcc 用 03编译，完全看不懂啥意思，尤其是调试
 
 ### 记录
 
@@ -105,11 +86,21 @@ https://talkgo.org/t/topic/1064/15
 
 ![img](http://abcdxyzk.github.io/images/assembly/2013-06-04-2.png)
 
+<<<<<<< HEAD
+![image-20201011190638541](images/image-20201011190638541.png)
+
+![image-20201011190652562](images/image-20201011190652562.png)
+
+
+
+![image-20201011190738249](images/image-20201011190738249.png)
+=======
 
 
 
 
 
+>>>>>>> d1ecb643e890bf4421c013b693562f0153fa15a2
 
 ### 阅读资料
 
@@ -123,17 +114,21 @@ https://talkgo.org/t/topic/1064/15
 
 - https://bbs.pediy.com/thread-257246.htm 【10%】
 
-- http://abcdxyzk.github.io/blog/2012/11/23/assembly-args/ 
+- 第一次阅读 【10%】
 
-  https://sourceware.org/gdb/onlinedocs/gdb/Registers.html
+  1. http://abcdxyzk.github.io/blog/2012/11/23/assembly-args/ 
 
-  https://wizardforcel.gitbooks.io/100-gdb-tips/content/print-registers.html
+  2. https://sourceware.org/gdb/onlinedocs/gdb/Registers.html
 
-  https://my.oschina.net/zengfr/blog/3196521
+  3. https://wizardforcel.gitbooks.io/100-gdb-tips/content/print-registers.html
 
-  https://imhuwq.com/2019/01/31/%E4%BB%8E%E6%B1%87%E7%BC%96%E7%9A%84%E8%A7%92%E5%BA%A6%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%81/ 【10%】
+  4. https://my.oschina.net/zengfr/blog/3196521
 
-  【10%】
+  5. https://imhuwq.com/2019/01/31/%E4%BB%8E%E6%B1%87%E7%BC%96%E7%9A%84%E8%A7%92%E5%BA%A6%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%81/ 
+
+  6. https://my.oschina.net/zengfr/blog/3196521
+
+  
 
 ## 第二周打卡：
 
