@@ -326,13 +326,40 @@ cat /root/.ssh/id_rsa.pub
 
 - ### 提交pr准备-本地代码管理
 
-~~~cmake
+
+- 如何fork-别人的项目后更新代码
+
+git remote -v
+git remote add upstream https://github.com/pingcap/tidb.git
+
+ git remote -v
+origin  git@github.com:watchpoints/tidb.git (fetch) 【自己本地仓库 远程提交路径】
+origin  git@github.com:watchpoints/tidb.git (push)
+upstream        https://github.com/pingcap/tidb.git (fetch) 【自己本地仓库 fork的远程提交路径】
+upstream        https://github.com/pingcap/tidb.git (push)
+
+
+git fetch upstream  //拉取源仓库的代码到本地
+
+git merge upstream/master     // 稳定版本分支
+git merge upstream/dev_study  //开发版本分支 不管用
+git merge origin/dev_study
+
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge
+
+git status
+git reset --hard origin/master
+
 
 ##  切换分支 不加-b则是切换到某一分支上，加上-b就是创建且切换
-git checkout -b dev_study 
+
 git branch
+git checkout -b dev_study
 git checkout  dev_study 
-## 提交代码到指定的分支
+
+
+### 提交pr准备-新分支提交到远程仓库中
 git push origin dev_study
 
 git push
@@ -340,20 +367,38 @@ fatal: The current branch dev_study has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin dev_study
-    
+
+
+git push origin master
+
+
+### 分支代码合并到主干
+
+1 进入分支，更新分支代码
+（branch）git pull；
+2 切换主干
+（branch）git checkout master；
+3 在主干上合并分支branch
+（master）git merge branch --squash
+4 提交合并后的代码
+（master）git commit -m ‘合并备注’
+5 将代码推送到远程仓库
+（master）git push
+
+
+
+## 3.2  操作
+
+
+
+###  window：
+
+
+
 ~~~
-
-
-
-- 提交pr准备-新分支提交到远程仓库中
+cd D:\money\src\github.com\watchpoints\tidb
 
 ~~~
-
-~~~
-
-
-
-
 
 
 
