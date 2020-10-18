@@ -385,8 +385,17 @@ git push origin master
 5 将代码推送到远程仓库
 （master）git push
 
+## 案例
 
+### parser
+git remote -v
+git remote add upstream https://github.com/pingcap/parser.git
 
+git fetch upstream  
+git merge upstream/master     
+git reset --hard origin/master
+git branch
+git checkout -b dev_study
 
 
 ## FQA
