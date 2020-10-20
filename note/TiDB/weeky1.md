@@ -359,8 +359,14 @@ tiup cluster start <cluster-name>
 tiup cluster start tidb-test
 
 http://www.mytidb.com:2379/dashboard/
+
+http://106.75.175.164:2379/dashboard/
+http://106.75.175.164:3000 
+
+
 访问集群：
 
+10.13.149.121
 访问 TiDB 数据库，密码为空：
 
 mysql -h 10.0.1.1 -P 4000 -u root

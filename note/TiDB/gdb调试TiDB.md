@@ -44,6 +44,7 @@ go build -ldflags “-s -w”
 ~~~shell
 cd /data/tidb/tiup
 tiup cluster deploy tidb-test v4.0.0 ./topology1.yaml --user root -p ##部署
+tiup cluster deploy tidb-test v4.0.0 ./topology.yaml --user root -p 
 tiup cluster list ##查询
 
 tiup cluster display tidb-test  ##查询

@@ -153,7 +153,15 @@ nohup pd-server --data-dir=pd \
 nohup tikv-server --pd="127.0.0.1:2379" \
                   --data-dir=tikv \
                   --log-file=tikv.log 2>&1 &
+                  
+                  
 ```
+
+
+
+./tidb-server  --data-dir=./temp  --log-file=./tikv.log 
+
+
 
 - 步骤三，启动 TiDB
 
