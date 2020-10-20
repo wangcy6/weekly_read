@@ -12,7 +12,18 @@ https://github.com/mofaph/csapp
 
 https://pccito.ugr.es/ec/practicas/2a/
 
+## 第四周打卡
+> 实验1：通过GDB调试一个简单函数调用c代码，看懂一个函数汇代码和16个寄存器如何被执行的。
 
+- 函数A调用函数B过程参数传递与寄存器关系[3.7章节]
+
+- 栈作用：保存参数（大于6个），局部变量（寄存器），函数调用关系
+
+- 看golang夜读汇编函数A调用函数B,需要保持函数A返回地址。
+
+- FQA：https://github.com/Talk-Go-CSAPP-05/Discusion/issues/14
+
+  
 
 ## 第三周打卡
 

@@ -229,61 +229,12 @@ go test -check.f TestCastXXX //使用 go test -check.f $TEST_NAME 来指定测�
 
 1. [安装PowerShell7](https://github.com/PowerShell/PowerShell/releases/tag/v7.0.0-preview.1) ，
 
-   Get-Host | Select-Object Version 2.0
-
    
-
-   
-
-   ![image-20200910114743062](../images/image-20200910114743062.png)
-
-   需要Universal C Runtime (CRT) for Windows 7 --> Windows Management Framework (WMF) 5.0
-
-   (fuck 公司破系统，看来自己购买好好机器 ，最后安装失败，window10内置)
-
-   
-
- {
-
-   "name": "Tidb planner Launch test package",
-
-   "type": "go",
-
-   "request": "launch",
-
-   "mode": "test",
-
-   "program": "${workspaceFolder}\\planner\\core",
-
-   "env": {},
-
-   "args": ["-check.f", "TestValidator"]
-
-  }
-
-Windows Management Framework 4.
-
-https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements?view=powershell-7
-
-https://docs.microsoft.com/zh-cn/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-6
-
-https://blog.csdn.net/clearloveq/article/details/81708655
-
-画外音：
-
-> 主要来自 https://github.com/pingcap/tidb/pull/19084的思路 ，我电脑有问题安装失败
->
-> 放弃了。
-
 
 
 - go test 单元测试直接显示 
 
-![image-20200912231931896](../images/image-20200912231931896.png)
-
 - vscode deubg 单元测试 本机 vscode golang launch.json 
-
-
 
 https://github.com/golang/vscode-go/blob/master/docs/debugging.md
 
@@ -304,8 +255,6 @@ tidb-server/main.go
 
 
 - [x]  安装mysql客户端Navicat，连接window下 tb server 
-
-![image-20200916121053504](../images/image-20200916121053504.png)
 
 
 
@@ -385,31 +334,44 @@ git push origin master
 5 将代码推送到远程仓库
 （master）git push
 
-
-
-## 3.2  操作
-
-
-
-###  window：
+## 案例
 
 
 
-~~~
-cd D:\money\src\github.com\watchpoints\tidb
+### parser
+git remote -v
+git remote add upstream https://github.com/pingcap/parser.git
 
-~~~
+git fetch upstream  
+git merge upstream/master     
+git reset --hard origin/master
+git branch
+git checkout -b dev_study
 
 
 
+```go
+GO111MODULE=on go mod edit -replace github.com/pingcap/parser=/data/tidb/src/github.com/watchpoints/parser
 
+version "dev_study" invalid: must be of the form v1.2.3
+unversioned new path must be local directory
+
+go list -m all |grep parser  ##显示依赖关系
+
+git remote -v
+//在默认情况下，在master分支
+// git push时一般会上传到远程下的master分支上
+git push origin master
+git push --set-upstream origin master
+
+//在分支的情况下：
+git push --set-upstream origin dev_study
+
+git push origin dev_study //分支提交到主干
+```
 
 ## FQA
 
-- https://pingcap.com/blog-cn/30mins-become-contributor-of-tikv/ 三十分钟成为 Contributor | 为 TiKV 添加 built-in 函数
+- 获取不到最新代码
 
-- http://blog.minifish.org/posts/dlv/ --使用 delve 调试 Golang 程序
-
--  https://asktug.com/t/topic/37122/2
-
-- https://juejin.im/post/6844903992552587272
+  
