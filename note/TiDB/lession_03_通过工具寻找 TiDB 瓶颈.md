@@ -702,6 +702,11 @@ https://github.com/pingcap/tidb/blob/master/docs/design/2019-11-14-tidb-builtin-
 
 
 
+go tool pprof -http=":8082" heap.profile
+
+go tool pprof -http=":8082" heap.profile
+
+
 
 
 ## ref

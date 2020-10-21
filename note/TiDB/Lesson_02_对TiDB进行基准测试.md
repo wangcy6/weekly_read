@@ -689,6 +689,18 @@ https://asktug.com/t/topic/36280/4
 curl http://127.0.0.1:10080/debug/zip --output tidb_debug.zip
 
 
+
+
+
+
+
+go tool pprof -http=":8082" heap.profile
+
+
+
+
+
+
 ### 遗留TODO
 
 - TiKV面板以前没使用过，里面好多功能参数，需要你研究一下。和源码结合起来

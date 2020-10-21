@@ -702,6 +702,28 @@ https://github.com/pingcap/tidb/blob/master/docs/design/2019-11-14-tidb-builtin-
 
 
 
+## TiDB性能分析
+
+~~~
+
+curl http://127.0.0.1:10080/debug/zip --output tidb_debug.zip
+
+go tool pprof -http=":8082" profile
+
+
+///////////////
+http://95.169.24.121:10080/debug/pprof/
+
+go tool pprof 127.0.0.1:10080/debug/pprof/heap
+
+curl -G [106.75.175.164](http://95.169.24.121:10080/debug/pprof/):10080/debug/pprof/heap > heap.profile
+
+~~~
+
+
+
+
+
 
 
 ## ref
