@@ -481,8 +481,7 @@ strace -p  16281
 
 
 
-
-
+./go-ycsb load mysql -P ./workloads/workloada -p recordcount=5000000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root  -p mysql.db=test
 
 
 ## ref

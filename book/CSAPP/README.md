@@ -12,7 +12,22 @@ https://github.com/mofaph/csapp
 
 https://pccito.ugr.es/ec/practicas/2a/
 
+![yzXcpZ4VYNOrjg8](../images/yzXcpZ4VYNOrjg8.png)
+
+### 第五周:存储器层次结构
+
+#### 1 .输出
+
+
+
+#### 2. 过程
+
+
+
 ## 第四周打卡
+
+![image-20201023092912294](../images/image-20201023092912294.png)
+
 > 实验1：通过GDB调试一个简单函数调用c代码，看懂一个函数汇代码和16个寄存器如何被执行的。
 
 - 函数A调用函数B过程参数传递与寄存器关系[3.7章节]
