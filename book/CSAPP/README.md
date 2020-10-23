@@ -18,11 +18,75 @@ https://pccito.ugr.es/ec/practicas/2a/
 
 #### 1 .输出
 
+缓存无处不在，是存储器的本质（最后一层L6 分布式文件系统）
+
+一 .如何判断一个函数具备告诉缓存友好型（重复利用缓存局部性）
+
+1. 对数组的顺序遍历step越小好，step=1（why 数据在空间上连续存储。顺序读取4字节出现第一次不命中，后面3次命中 命中概率3/4)
 
 
-#### 2. 过程
+2. 对局部变量反复引用（why  可以局部变量存储寄存器上）
+
+3. 二维数组循环，按照行读取命中大于列读取（课本上例子 前者概率3/4,后者是0）
+
+   
+
+二. 文件缓存是一个重要缓存（slabtop查看）
+
+1. 虚拟文件系统（对不同文件系统的抽象）
+
+2. 文件系统（参考第一期性能优化 ）
+
+   目录项（完全是内存缓存，100% ），
+
+   索引节点(一个inode长度固定，文件内容会缓存到页缓存 Cache 中)，
+
+   数据块（文件内容会缓存到页缓存 Cache 中），
+
+   超级快（存储整个文件系统的状态）
+
+   
+
+三 。没看懂地方
+
+时间和空间组成存储山 斜坡表示什么意思。
 
 
+
+#### 2. 动手实践
+
+![image-20201023102238173](../images/image-20201023102238173.png)
+
+![image-20201023094608042](../images/image-20201023094608042.png)
+
+![image-20201023100115922](../images/image-20201023100115922.png)
+
+![image-20201023101311549](../images/image-20201023101311549.png)
+
+![image-20201023101321542](../images/image-20201023101321542.png)
+
+![img](https://zdyxry.github.io/2020/04/18/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%A7%A3%E9%87%8A/fs-3.png)
+
+![img](https://static001.geekbang.org/resource/image/72/12/728b7b39252a1e23a7a223cdf4aa1612.png)
+
+#### 3. 延伸阅读
+
+- [Linux性能优化](https://github.com/dongbingliu/JiKeShiJian/tree/master/Linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96) 
+
+- 动画演示：https://www.scss.tcd.ie/Jeremy.Jones/VivioJS/caches/MESIHelp.htm
+
+- https://coolshell.cn/articles/20793.html
+
+- Wikipedia : [CPU Cache ](https://en.wikipedia.org/wiki/CPU_cache)
+- 经典文章：[Gallery of Processor Cache Effects](http://igoro.com/archive/gallery-of-processor-cache-effects/) （这篇文章中的测试已经有点过时了，但是这篇文章中所说的那些东西还是非常适用的）
+- Effective C++作者 Scott Meyers 的演讲 CPU Caches and Why You Care （[Youtube](https://www.youtube.com/watch?v=WDIkqP4JbkE)，[PPT](https://www.aristeia.com/TalkNotes/codedive-CPUCachesHandouts.pdf)）
+- 美国私立大学Swarthmore的教材 [Cache Architecture and Design](https://www.cs.swarthmore.edu/~kwebb/cs31/f18/memhierarchy/caching.html)
+- 经典文章：[What Every Programmer Should Know About Memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf) （这篇文章非常经典，但是开篇太晦涩了，居然告诉你晶体管内的构造，第三章和第六章是重点）
+- Nonblocking Algorithms and Scalable Multicore Programming （[英文版](https://queue.acm.org/detail.cfm?id=2492433)，[中文版](https://www.oschina.net/translate/nonblocking-algorithms-and-scalable-multicore-programming)）
+- Github上的一个代码库 [hardware-effects](https://github.com/Kobzol/hardware-effects) 里面有受CPU影响的程序的演示
+- Optimizing for instruction caches （[Part 1](https://www.eetimes.com/optimizing-for-instruction-caches-part-1/)，[Part 2](https://www.eetimes.com/optimizing-for-instruction-caches-part-2/)， [Part 3](https://www.eetimes.com/optimizing-for-instruction-caches-part-3/)）
+- 经典数据：[Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
+- 关于Java的可以看一下这篇[Optimizing Memory Access With CPU Cache](https://dzone.com/articles/optimizing-memory-access-with-cpu-cache) 或是 [Writing cache-friendly code](https://www.stardog.com/blog/writing-cache-friendly-code/)
 
 ## 第四周打卡
 
