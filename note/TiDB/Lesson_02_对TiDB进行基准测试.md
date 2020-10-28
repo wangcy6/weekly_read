@@ -470,7 +470,7 @@ tidb Cluster: tidb-test
 tidb Version: v4.0.0
 ID               Role        Host       Ports        OS/Arch       Status      Data Dir                                   Deploy Dir
 --               ----        ----       -----        -------       ------      --------                                   ----------
-127.0.0.1:3000   grafana     127.0.0.1  3000         linux/x86_64  Up          -                                          /data/tidb/tiup/tidb-deploy/grafana-3000
+127.0.0.1:3000   grafana     127.0.0.1           linux/x86_64  Up          -                                          /data/tidb/tiup/tidb-deploy/grafana-3000
 127.0.0.1:2379   pd          127.0.0.1  2379/2380    linux/x86_64  Down        /data/tidb/tiup/tidb-data/pd-2379          /data/tidb/tiup/tidb-deploy/pd-2379
 127.0.0.1:9090   prometheus  127.0.0.1  9090         linux/x86_64  activating  /data/tidb/tiup/tidb-data/prometheus-9090  /data/tidb/tiup/tidb-deploy/prometheus-9090
 127.0.0.1:4000   tidb        127.0.0.1  4000/10080   linux/x86_64  Up          -                                          /data/tidb/tiup/tidb-deploy/tidb-4000
