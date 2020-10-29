@@ -397,7 +397,7 @@ git fetch upstream
 git checkout  dev_study 
 
 git merge upstream/dev_study     
-git reset --hard origin/master
+	
 git branch
 git checkout -b dev_study
 
