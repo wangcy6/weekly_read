@@ -24,5 +24,9 @@ insert into user values(2, 'zhangsan','no');
 insert into user values(3, 'lisi', 'yes');
 
 insert into user values(4, 'lisi', 'no');
+
+SET @a=1;
+PREPARE prepare_sql from "SELECT * FROM user where id=?";
+EXECUTE prepare_sql USING @a;
 ~~~
 

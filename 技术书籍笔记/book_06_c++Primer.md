@@ -44,6 +44,10 @@ categories: ["c++"]
 
 ![image-20201028175739421](../images/image-20201028175739421.png)
 
+![image-20201029093913607](../images/image-20201029093913607.png)
+
+![image-20201029093913607](../images/image-20201029093913607.png)
+
 # C++ Primer   
 
 
