@@ -484,6 +484,14 @@ strace -p  16281
 ./go-ycsb load mysql -P ./workloads/workloada -p recordcount=5000000 -p mysql.host=127.0.0.1 -p mysql.port=4000  -p mysql.user=root  -p mysql.db=test
 
 
+nohup valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./gcache-proxy  &
+		 
+
 ## ref
 - TiDB 源码阅读系列文章（六）Select 语句概览
 
