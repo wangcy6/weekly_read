@@ -53,7 +53,7 @@ __thread signal_handler_t tl_handler = ob_signal_handler;
 
 void coredump_cb(int, siginfo_t*);
 void ob_signal_handler(int sig, siginfo_t* si, void*)
-{
+{  // SIGURG　　16　　 IO信道紧急信号　
   if (MP_SIG == sig) {
     ObISigHandler* handler = (ObISigHandler*)si->si_value.sival_ptr;
     handler->handle();

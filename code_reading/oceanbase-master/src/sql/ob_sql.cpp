@@ -149,11 +149,12 @@ int ObSql::stmt_prepare(
   }
   return ret;
 }
-
+//查询执行结果
+//stmt:一个sql命令
 int ObSql::stmt_query(const common::ObString& stmt, ObSqlCtx& context, ObResultSet& result)
 {
   int ret = OB_SUCCESS;
-  ObTruncatedString trunc_stmt(stmt);
+  ObTruncatedString trunc_stmt(stmt); //
 #if !defined(NDEBUG)
   LOG_INFO("Begin to handle text statement",
       K(trunc_stmt),
